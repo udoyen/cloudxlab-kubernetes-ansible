@@ -6,7 +6,7 @@ def get_hosts(ec2,fv):
    f={'Name':'tag:node-type','Values':[fv]}
    hosts=[]
    for each_in in ec2.instances.filter(Filters=[f]):
-#      print(each_in.private_ip_address)
+#       print(each_in.private_ip_address)
        hosts.append(each_in.private_ip_address)
    return hosts
 

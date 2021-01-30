@@ -15,12 +15,21 @@
       service: name=docker enabled=yes
     - name: Install apt-transport-https
       apt: name=apt-transport-https state=latest
+    - name: Install git
+      apt: name=git state=present
+    - name: Install wget
+      apt: name=wget state=present
+    - name: Install curl
+      apt: name=curl state=present
     - name: Configure K8 Repo
       shell:
         cmd: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
     - name: perform package update
       shell:
         cmd: echo "deb http://apt.kubernetes.io/ kubernetes-xenial main"  | sudo tee -a /etc/apt/sources.list.d/kubernetes.list  && sudo apt-get update 
+    - name: Run the equivalent of "apt-get update" as a separate step
+      apt:
+       update_cache: yes
     - name: Install kubelet
       apt: name=kubelet state=latest
     - name: Install kubeadm

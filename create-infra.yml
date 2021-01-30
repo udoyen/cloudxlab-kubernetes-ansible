@@ -3,14 +3,14 @@
   hosts: localhost
   gather_facts: False
   vars:
-    keypair: devops
+    keypair: bastion-london
     instance_type: t2.micro
-    security_group: default
-#    Ubuntu ami-0eb89db7593b5d434 
+    security_group: launch-wizard-1
+#    Ubuntu ami-0e169fa5b2b2f88ae
 #    centos7 ami-09e5afc68eed60ef4
-    image: ami-0eb89db7593b5d434
+    image: ami-0e169fa5b2b2f88ae
     region: eu-west-2
-    subnet: subnet-082213e51ccfdcaa4 
+    subnet: subnet-5a338e16 
   tasks:
     - name: Generate key
       shell:
