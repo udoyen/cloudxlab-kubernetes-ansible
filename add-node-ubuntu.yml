@@ -3,9 +3,9 @@
   gather_facts: False
   become: true
   vars:
-    kube_api_server: 172.31.44.221
-    token: ChangeMe
-    disc_token: ChangeMe
+    kube_api_server: 172.31.39.166
+    token: kln5n2.s88z47ei7sbgb9ou
+    disc_token: sha256:36709ceb4d8e8eb820f6900c71a127ecc67fad99e56012d6d1811a0721a200cc
   hosts: worker
   tasks:
     - name: join k8-cluster
